@@ -11,22 +11,22 @@ function Nav({ NavLink }) {
     >
       <ul className="nav-container">
         <li className="nav-item">
-          <NavLink to="/" exact className="nav-link">
+          <NavLink to="/sh/" exact className="nav-link">
             Home
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/bg" className="nav-link">
+          <NavLink to="/sh/bg" className="nav-link">
             BG
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/todopos" className="nav-link">
+          <NavLink to="/sh/todopos" className="nav-link">
             POS
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/opt" className="nav-link">
+          <NavLink to="/sh/opt" className="nav-link">
             OPT
           </NavLink>
         </li>

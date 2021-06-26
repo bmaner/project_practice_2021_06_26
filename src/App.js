@@ -1,66 +1,63 @@
 import './App.css';
 import React, { useState } from 'react';
-import Main from './page/Main';
-import Bg from './page/Bg';
-import TodoPos from './page/TodoPos';
-import Opt from './page/Opt';
-import Nav from './components/Nav';
-import Helper from './components/Helper';
-import { Switch, Route, NavLink, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { Switch, Route, NavLink } from 'react-router-dom';
+import He from './projects/He';
+import Hs from './projects/Hs';
+import Sh from './projects/Sh';
 
 function App() {
-  const [selected, setSelected] = useState('');
-  const location = useLocation();
+  const [status, setStatus] = useState(false);
 
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-    },
-    in: {
-      opacity: 1,
-    },
-    out: {
-      opacity: 0,
-    },
-  };
-
-  const pageTransition = {
-    type: 'tween',
-    ease: 'anticipate',
-    duration: 0.8,
-  };
-
-  return (
-    <div className="App">
-      <AnimatePresence>
-        <Switch location={location} key={location.pathname}>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route exact path="/bg">
-            <Bg
-              pageVariants={pageVariants}
-              pageTransition={pageTransition}
-              selected={selected}
-              setSelected={setSelected}
-            />
-          </Route>
-          <Route exact path="/todopos">
-            <TodoPos
-              pageVariants={pageVariants}
-              pageTransition={pageTransition}
-              selected={selected}
-            />
-          </Route>
-          <Route exact path="/opt">
-            <Opt pageVariants={pageVariants} pageTransition={pageTransition} />
-          </Route>
-        </Switch>
-      </AnimatePresence>
-      <Helper />
-      <Nav NavLink={NavLink} />
-    </div>
+  // return <Sh />;
+  return status ? (
+    <Switch>
+      <Route exact path="/sh">
+        <Sh />
+      </Route>
+      <Route exact path="/hs">
+        <Hs />
+      </Route>
+      <Route exact path="/he">
+        <He />
+      </Route>
+    </Switch>
+  ) : (
+    <>
+      <h1>under construction</h1>
+      <p>양질의 화면으로 찾아오겠습니다. 기다려주세요.</p>
+      <img
+        src="/images/underconstruction.jpg"
+        style={{ width: '50%', height: '50%' }}
+      />
+      <div className="router-container">
+        <div className="router-item" onClick={() => setStatus(true)}>
+          <NavLink to="/sh" exact className="router-link">
+            투두
+          </NavLink>
+        </div>
+        <div className="router-item" onClick={() => setStatus(true)}>
+          <NavLink to="/hs" exact className="router-link">
+            채팅
+          </NavLink>
+        </div>
+        <div className="router-item" onClick={() => setStatus(true)}>
+          <NavLink to="/he" exact className="router-link">
+            알고
+          </NavLink>
+        </div>
+      </div>
+      <Switch>
+        <Route exact path="/sh">
+          <Sh />
+        </Route>
+        <Route exact path="/hs">
+          <Hs />
+        </Route>
+        <Route exact path="/he">
+          <He />
+        </Route>
+      </Switch>
+    </>
   );
 }
 
