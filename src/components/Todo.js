@@ -53,7 +53,7 @@ function Todo({ posConRef }) {
       style={{ position: 'absolute', zIndex: 3000 }}
     >
       <div className="todo-row">
-        <div className="todo-content">코드스테이츠 개극혐</div>
+        <div className="todo-content">커스텀 투두스</div>
         <div className="icons">
           <div className="icon">✏️</div>
           <div className="icon">❌</div>

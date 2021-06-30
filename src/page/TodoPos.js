@@ -20,7 +20,7 @@ function TodoPos({ pageVariants, pageTransition, selected }) {
         width: '100vw',
         height: '100vh',
         overflow: 'hidden',
-        backgroundImage: `url(images/${selected})`,
+        backgroundImage: `url(../images/${selected})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

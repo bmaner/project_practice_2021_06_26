@@ -105,7 +105,7 @@ function Bg({ pageVariants, pageTransition, selected, setSelected }) {
           transition={{ duration: 2, type: 'spring' }}
         >
           <img
-            src={`images/${selected}`}
+            src={`../images/${selected}`}
             style={{
               width: '20vw',
               height: '20vw',
