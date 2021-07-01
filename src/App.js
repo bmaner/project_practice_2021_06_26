@@ -4,6 +4,7 @@ import { Switch, Route, NavLink } from 'react-router-dom';
 import He from './projects/He';
 import Hs from './projects/Hs';
 import Sh from './projects/Sh';
+import Landing from './page/Landing';
 
 function App() {
   const [status, setStatus] = useState(false);
@@ -22,13 +23,17 @@ function App() {
       </Route>
     </Switch>
   ) : (
-    <>
-      <h1>under construction</h1>
+    <div
+      className="app-container"
+      style={{ overflowX: 'hidden', overflowY: 'hidden' }}
+    >
+      {/* <h1>under construction</h1>
       <p>양질의 화면으로 찾아오겠습니다. 기다려주세요.</p>
       <img
         src="/images/underconstruction.jpg"
         style={{ width: '50%', height: '50%' }}
-      />
+      /> */}
+      <Landing />
       <div className="router-container">
         <div className="router-item" onClick={() => setStatus(true)}>
           <NavLink to="/sh" exact className="router-link">
@@ -57,7 +62,7 @@ function App() {
           <He />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 }
 

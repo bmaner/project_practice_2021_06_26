@@ -72,7 +72,7 @@ function Image({ url, setSelected }) {
       onPointerOut={e => onHover(e, false)}
     >
       <planeBufferGeometry attach="geometry" args={[5, 8]} />
-      <meshBasicMaterial attach="material" map={texture} color={color} />
+      <meshBasicMaterial attach="material" map={texture} />
     </mesh>
   );
 }
