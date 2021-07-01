@@ -34,7 +34,7 @@ function Plane(props) {
 }
 
 function Landing() {
-  const words = ['DANIEL', 'HYOGU', 'VODKAMITLIME'];
+  const words = ['DANIEL', 'HYOGU', 'VODKAMITLIME', 'FIRST', 'PROJECT'];
   return (
     <div
       className="landing-container"

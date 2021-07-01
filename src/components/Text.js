@@ -34,7 +34,7 @@ export default function Text({
   );
   const [ref, api] = useBox(() => ({
     mass: random(1, 4, true),
-    position: [position.x * 20, position.y * 10, position.z * 10],
+    position: [position.x * 20, position.y * 15, position.z * 10],
   }));
   return (
     <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]}>
