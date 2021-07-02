@@ -27,7 +27,7 @@ function Plane(props) {
   }));
   return (
     <mesh receiveShadow ref={ref}>
-      <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
+      <planeBufferGeometry attach="geometry" args={[300, 300]} />
       <meshStandardMaterial map={texture} attach="material" color="green" />
     </mesh>
   );

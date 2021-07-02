@@ -8,6 +8,7 @@ function Nav({ NavLink }) {
       initial={{ x: '100vw' }}
       animate={{ x: 0 }}
       transition={{ duration: 2, type: 'spring', delay: 1.5 }}
+      className="sh-nav"
     >
       <ul className="nav-container">
         <li className="nav-item">
