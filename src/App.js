@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
 import He from './projects/He';
-import Hs from './projects/Hs';
+import Chat from './projects/Chat';
 import Sh from './projects/Sh';
 import Landing from './page/Landing';
 
@@ -22,7 +22,7 @@ function App() {
               </NavLink>
             </div>
             <div className="router-item">
-              <NavLink to="/hs" exact className="router-link">
+              <NavLink to="/chat" exact className="router-link">
                 채팅
               </NavLink>
             </div>
@@ -36,8 +36,8 @@ function App() {
         <Route exact path="/sh">
           <Sh />
         </Route>
-        <Route exact path="/hs">
-          <Hs />
+        <Route exact path="/Chat">
+          <Chat />
         </Route>
         <Route exact path="/he">
           <He />
