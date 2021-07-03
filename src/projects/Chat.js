@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
-import queryString from 'query-string';
 import io from "socket.io-client";
 
 import InfoBar from '../components/Chat/InfoBar/InfoBar';
 import Input from '../components/Chat/Input/Input';
 import Messages from '../components/Chat/Messages/Messages';
+import UserList from '../components/Chat/UserList/UserList';
 
 import './Chat.css';
 
 let socket;
-// const ENDPOINT = 'http://localhost:5000/';
-const ENDPOINT = 'https://chat-web-front-app.herokuapp.com/';
+const ENDPOINT = 'http://localhost:5000/';
+// const ENDPOINT = 'https://chat-web-front-app.herokuapp.com/';
 
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [userList, setUserList] = useState([]);
 
   useEffect(() => {
     const name = Math.random().toString(36).substr(2,11);
@@ -38,6 +39,9 @@ const Chat = ({ location }) => {
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
     });
+    socket.on('roomData', user => {
+      setUserList(userList => user.users);
+    });
   }, []);
 
   const sendMessage = (event) => {
@@ -51,9 +55,12 @@ const Chat = ({ location }) => {
   return (
     <div className="outerContainer">
       <div className="container">
-          <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} room={room} />
+        <InfoBar room={room} />
+        <Messages messages={messages} name={name} />
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} room={room} />
+      </div>
+      <div className="userList">
+        <UserList userList={userList} />
       </div>
     </div>
   );
