@@ -8,4 +8,4 @@ const UserList = ({userList}) => (
 	</div>
 );
 
-export default UserList;
+export default UserList; 
